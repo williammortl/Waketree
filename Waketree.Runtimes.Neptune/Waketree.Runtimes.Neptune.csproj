@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Waketree.Common\Waketree.Common.csproj" />
+    <ProjectReference Include="..\Waketree.Neptune.Common\Waketree.Neptune.Common.csproj" />
+    <ProjectReference Include="..\Waketree.Neptune.Interpreter\Waketree.Neptune.Interpreter.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+﻿// build hello world message
+PUSHSTR,Hello World!
+PUSHSTR,-From Will
+ADD
+PRNT
+END

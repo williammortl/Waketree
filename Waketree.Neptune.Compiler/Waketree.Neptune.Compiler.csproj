@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Samples\HelloWorld.neptune" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Samples\HelloWorld.neptune">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Waketree.Neptune.Common\Waketree.Neptune.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Samples\ThreadTest.neptune">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Samples\ThreadTestMutex.neptune">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,53 @@
+﻿// program input: requires a parameter that is a long that is how many threads to create
+
+// create the global variable for the counter
+PUSHL, 1
+GLOBAL_SAV,1604
+
+// cast the program argument to a long
+GLOBAL_LOD,-2
+STRTOL
+
+// run the number of threads specified in the program argument
+LBL,create_thread_loop
+	TGOSUB,thread_routine
+	PUSHL,1
+	SUB
+	DUP
+	PUSHL,0
+	IFNQ,end_if_label
+		GOTO,create_thread_loop
+	LBL,end_if_label
+END
+
+// the thread subroutine
+//	expects the stack to have a long val of what thread this is
+LBL,thread_routine
+
+	CRIT_ENTER,1
+
+	// thread info
+	DUP
+	PUSHSTR,THREAD:
+	PRNT
+	PRNT
+	PUSHSTR,VALUE:
+	PRNT
+
+	// the critical part
+	GLOBAL_LOD,1604
+	PUSHL,1
+	ADD
+	DUP
+	PRNT
+	GLOBAL_SAV,1604
+
+	// seperator
+	PUSHSTR,----------------------
+	PRNT
+
+	CRIT_EXIT,1
+
+	// loop forever
+	GOTO,thread_routine
+END

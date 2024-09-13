@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Waketree.Neptune.Runtime.Local": {
+      "commandName": "Project",
+      "commandLineArgs": "ThreadTestMutex.neptune.compiled 100"
+    }
+  }
+}
